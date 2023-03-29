@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class Dashboard extends JFrame{
     private JLabel titleLabel;
-    private JLabel[] priceLabel = new JLabel[6];
+    private JLabel[] priceLabel = new JLabel[5];
     private JSpinner[] quantity = new JSpinner[12];
     private JCheckBox[] nameCheckBox = new JCheckBox[12];
     private JTextArea slipPanel;
@@ -34,7 +34,7 @@ public class Dashboard extends JFrame{
         gbc.weighty = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
-        // Coffee names and picture squares
+        // Coffee names
         nameCheckBox[0] = new JCheckBox("Capuccino");
         nameCheckBox[1] = new JCheckBox("Espresso");
         nameCheckBox[2] = new JCheckBox("Mocca");
@@ -44,12 +44,16 @@ public class Dashboard extends JFrame{
         nameCheckBox[6] = new JCheckBox("Milk Green Tea");
         nameCheckBox[7] = new JCheckBox("Thai Tea");
 
-        JPanel coffeePanel = new JPanel(new GridLayout(4, 2, 10, 10));
+        SpinnerNumberModel value = new SpinnerNumberModel(0,0,5,1);
+
+        JPanel coffeePanel = new JPanel(new GridLayout(12, 2, 0, 0));
         coffeePanel.setBorder(BorderFactory.createTitledBorder("Coffee"));
         
         JPanel capuccinoPanel = new JPanel(new BorderLayout());
         capuccinoPanel.add(nameCheckBox[0], BorderLayout.SOUTH);
+        JSpinner capuccinoSpinner = new JSpinner(value);
         coffeePanel.add(capuccinoPanel);
+        coffeePanel.add(capuccinoSpinner);
         
         JPanel espressoPanel = new JPanel(new BorderLayout());
         espressoPanel.add(nameCheckBox[1], BorderLayout.SOUTH);
@@ -66,7 +70,19 @@ public class Dashboard extends JFrame{
         JPanel americanoPanel = new JPanel(new BorderLayout());
         americanoPanel.add(nameCheckBox[4], BorderLayout.SOUTH);
         coffeePanel.add(americanoPanel);
+
+        JPanel cocoPanel = new JPanel(new BorderLayout());
+        cocoPanel.add(nameCheckBox[5], BorderLayout.SOUTH);
+        coffeePanel.add(cocoPanel);
         
+        JPanel milkgreenteaPanel = new JPanel(new BorderLayout());
+        milkgreenteaPanel.add(nameCheckBox[6], BorderLayout.SOUTH);
+        coffeePanel.add(milkgreenteaPanel);
+
+        JPanel thaiteaPanel = new JPanel(new BorderLayout());
+        thaiteaPanel.add(nameCheckBox[7], BorderLayout.SOUTH);
+        coffeePanel.add(thaiteaPanel);
+
         add(coffeePanel);
     }
 
