@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -45,4 +46,8 @@ public class Dashboard extends JFrame{
 
 
 
+=======
+public class Dashboard {
+    
+>>>>>>> 59729fe (add object)
 }
