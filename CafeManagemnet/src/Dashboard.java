@@ -5,6 +5,9 @@ import java.awt.event.*;
 public class Dashboard extends JFrame{
     private JLabel titleLabel;
     private JLabel name;
+    private JLabel price;
+    private JLabel quantity;
+    private JLabel purchase;
 
     private JLabel slipPanel;
     private JButton totalButton;
