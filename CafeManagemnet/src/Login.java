@@ -13,7 +13,6 @@ public class Login extends JFrame implements ActionListener {
 
     public Login() {
         // Set up the frame
-        setTitle("Login");
         setSize(400, 250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,21 +69,10 @@ public class Login extends JFrame implements ActionListener {
         gbc.gridx = 0;
         gbc.gridy++;
         gbc.gridwidth = 1;
-
-        GroupLayout layout = new GroupLayout(panel);
-        panel.setLayout(layout);
-        layout.setAutoCreateGaps(true);
-        layout.setAutoCreateContainerGaps(true);
-
-        layout.setHorizontalGroup(
-            layout.createSequentialGroup()
-                .addComponent(loginButton)
-                    .addComponent(cancelButton)
-        );
-        // panel.add(loginButton, gbc);
-        // gbc.gridx++;
-        // panel.add(cancelButton, gbc);
-        // panel.setBackground(Color.WHITE);
+        panel.add(loginButton, gbc);
+        gbc.gridx++;
+        panel.add(cancelButton, gbc);
+        panel.setBackground(Color.WHITE);
         add(panel);
     }
 
